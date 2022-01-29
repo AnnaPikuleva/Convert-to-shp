@@ -9,7 +9,7 @@ myfolder=arcpy.GetParameterAsText(1)
 datasetList = arcpy.ListDatasets(feature_type='feature')
 for dataset in datasetList:
     #для каждого dataset создали папку 
-    arcpy.management.CreateFolder(myfolder,'my_folder')
+    arcpy.management.CreateFolder(myfolder,dataset)
     #список всех fc
     fcList = arcpy.ListFeatureClasses(feature_dataset=dataset)
     for fc in fcList:             
